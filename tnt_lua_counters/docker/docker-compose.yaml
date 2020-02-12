@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  counter_master:
+    image: "tarantool/tarantool"
+    ports:
+      - "3301:3301"
+    volumes:
+      - ${PWD}/app:/opt/tarantool
+    command: [ "tarantool", "/opt/tarantool/app.lua" ]
